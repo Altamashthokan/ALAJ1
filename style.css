@@ -87,7 +87,7 @@ ul { list-style: none; }
 /* HERO SECTION */
 .hero {
     height: 90vh;
-    background: url('https://images.unsplash.com/photo-1505672675380-41225e4c0947?q=80&w=1000&auto=format&fit=crop') no-repeat center center/cover;
+    background: url('images/hero.jpg') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
