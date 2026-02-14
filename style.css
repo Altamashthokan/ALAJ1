@@ -1,0 +1,339 @@
+
+/* RESET & VARIABLES */
+:root {
+    --primary-color: #0a1f3d; /* Dan-Bunkering Navy */
+    --accent-color: #8a1538;  /* Dan-Bunkering Red/Bordeaux */
+    --text-color: #333;
+    --light-bg: #f4f4f4;
+    --white: #ffffff;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* UTILITY CLASSES */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.small-container { max-width: 800px; }
+
+/* NAVIGATION */
+.navbar {
+    background: var(--white);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+.logo span { color: var(--accent-color); }
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { color: var(--accent-color); }
+
+.nav-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 0;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+    color: var(--white) !important;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1505672675380-41225e4c0947?q=80&w=1000&auto=format&fit=crop') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    margin-top: 60px; /* Offset for fixed header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(10,31,61,0.9), rgba(10,31,61,0.4));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h5 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.hero-contact-bar {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 20px;
+}
+
+.contact-item .label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.contact-item a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* INTRO TEXT */
+.intro-text {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.intro-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* SPLIT SECTIONS (50/50 Layout) */
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 600px;
+}
+
+.split-image {
+    flex: 1;
+    min-width: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.split-content {
+    flex: 1;
+    min-width: 400px;
+    background: var(--light-bg);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Reverse layout for alternating sections */
+.split-section.reverse {
+    flex-direction: row-reverse;
+}
+.split-section.reverse .split-content {
+    background: var(--white);
+}
+
+.split-content h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.split-content h4 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.split-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.product-item {
+    margin-bottom: 20px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+.product-item h5 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+.feature-list li::before {
+    content: '✓';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 80px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col h3, .footer-col h4 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p, .footer-col li {
+    margin-bottom: 10px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-col a {
+    color: #ccc;
+    transition: 0.3s;
+}
+.footer-col a:hover { color: var(--white); text-decoration: underline; }
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--primary-color);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        transition: 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-contact-bar { flex-direction: column; gap: 20px; }
+}
