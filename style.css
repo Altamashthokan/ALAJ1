@@ -50,11 +50,43 @@ ul { list-style: none; }
     align-items: center;
 }
 
-/* UPDATED LOGO STYLES */
+/* LOGO STYLES */
+.logo {
+    display: flex;
+    align-items: center; /* Aligns text vertically with image */
+    gap: 15px;           /* Space between image and text */
+    text-decoration: none;
+}
+
 .logo img {
-    height: 50px; /* Adjusts logo height to fit navbar */
+    height: 50px;        /* Adjust height to fit navbar */
     width: auto;
     display: block;
+}
+
+.logo-text {
+    font-size: 1.2rem;   /* Adjust size of the text */
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.logo-text span {
+    color: var(--accent-color); /* Makes 'ENERGY TRADING' Red/Bordeaux */
+    display: block;             /* OPTIONAL: Remove this line if you want all text on one line */
+    font-size: 0.9em;           /* Makes the second line slightly smaller */
+}
+
+/* RESPONSIVE TWEAK */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 0.9rem; /* Smaller text on mobile phones */
+    }
+    .logo img {
+        height: 40px;
+    }
 }
 
 .nav-menu {
